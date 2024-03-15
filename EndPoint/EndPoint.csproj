@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.14" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BlogManagement.Application.Contracts\BlogManagement.Application.Contracts.csproj" />
+	  <ProjectReference Include="..\BlogManagement.Infrastructure.Configuration\BlogManagement.Infrastructure.Configuration.csproj" />
+	  <ProjectReference Include="..\ShopManagement.Configuration\ShopManagement.Configuration.csproj" />
+	  <ProjectReference Include="..\ShopManagement.Infrastructure.EFCore\ShopManagement.Infrastructure.EFCore.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\Theme\images\about\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\Theme\images\brands\AyroUI-white.svg" />
+	  <None Include="wwwroot\Theme\images\brands\ayroui.svg" />
+	  <None Include="wwwroot\Theme\images\brands\LineIcons-white.svg" />
+	  <None Include="wwwroot\Theme\images\brands\lineicons.svg" />
+	  <None Include="wwwroot\Theme\images\brands\PlainAdmin-white.svg" />
+	  <None Include="wwwroot\Theme\images\brands\plainadmin.svg" />
+	  <None Include="wwwroot\Theme\images\brands\TailGrids-white.svg" />
+	  <None Include="wwwroot\Theme\images\brands\tailgrids.svg" />
+	  <None Include="wwwroot\Theme\images\brands\uideck-white.svg" />
+	  <None Include="wwwroot\Theme\images\brands\uideck.svg" />
+	  <None Include="wwwroot\Theme\images\logo\logo-white.svg" />
+	  <None Include="wwwroot\Theme\images\logo\logo.svg" />
+	  <None Include="wwwroot\Theme\images\sale-token\payment-method.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\faq-shape-1.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\faq-shape-2.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\footer-shape-1.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\footer-shape-2.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\hero-shape-1.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\hero-shape-2.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\newsletter-shape.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\quote-shape-1.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\quote-shape-2.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\testimonial-shape.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\timeline.svg" />
+	  <None Include="wwwroot\Theme\images\shapes\token-sale-shape.svg" />
+	  <None Include="wwwroot\Theme\js\alpine.min.js" />
+	  <None Include="wwwroot\Theme\js\apexcharts.min.js" />
+	  <None Include="wwwroot\Theme\js\glightbox.min.js" />
+	  <None Include="wwwroot\Theme\js\main.js" />
+	  <None Include="wwwroot\Theme\js\wow.min.js" />
+	</ItemGroup>
+</Project>

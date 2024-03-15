@@ -1,0 +1,76 @@
+﻿@page
+@model EndPoint.Pages.CoinsModel
+@{
+}
+<section id="roadmap" class="af a2E aw[120px] is-rtl">
+    <div class=" dark:aT">
+        <h1 class="xl:text-2xl text-lg font-bold xl:p-12 p-4">  قیمت ارزهای دیجیتال به صورت لحظه ای :</h1>
+        <div class="flex lg:hidden justify-between items-center p-2  font-bold border-b-2 border-gray-400 bg-blue-600 text-white text-xs md:text-lg">
+            <h3 class="">
+                #ارز دیجیتال
+            </h3>
+            <h3 class="">
+                قیمت
+            </h3>
+            <h3 class="">
+                تغیرات ( 24 ساعت)
+            </h3>
+        </div>
+        <div class="hidden lg:flex justify-between items-center p-4 border-b-2 border-gray-400 mx-8 font-bold bg-blue-600 text-white lg:text-md xl:text-lg">
+            <h3 class="lg:mr-8">
+                #ارز دیجیتال
+            </h3>
+            <h3 class="">قیمت</h3>
+            <h3 class="">
+                تغییرات (24 ساعت)
+            </h3>
+            <h3 class="">ارزش کل بازار</h3>
+            <h3 class="">حجم معاملات (24 ساعت)</h3>
+        </div>
+        @foreach(var item in Model.coins)
+        {
+            <!--Mobile-->
+            <div class="flex lg:hidden justify-between items-center p-2 font-bold border-b-2 border-slate-500 text-xs md:text-lg">
+                <div class="flex-row justify-center w-10">
+                    <img class="w-10 bg-gray-100" src="@item.ImageAddress" alt="">
+                    <a asp-action="Coin" asp-route-Id="@item.Id"><h3 class=" mt-1">@item.Name</h3></a>
+                    <a asp-action="Coin" asp-route-Id="@item.Id"><p class=" text-yellow-400 text-center mt-1">@item.Symbol</p></a>
+                </div>
+                <div>
+                    <h3 class="">
+                        $48,308
+                    </h3>
+                </div>
+                <div>
+                    <h3>$ 19,339,530,530</h3>
+                </div>
+            </div>
+            <!--Desktop-->
+            <div class="hidden  justify-between items-center p-8 lg:flex border-b-2 border-slate-500 mx-8 font-bold lg:text-md xl:text-lg">
+                <div class="block">
+                    <div class="w-12 flex">
+                        <img class="w-10 bg-gray-100" src="@item.ImageAddress" alt="">
+                        <div class="flex-row px-2">
+                            <a asp-page="coin" asp-route-id="@item.Id"><h3 class="">@item.Name</h3></a>
+                            <a asp-page="coin" asp-route-id="@item.Id"><p class="text-center  text-yellow-400">@item.Symbol</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="">
+                        $48,308
+                    </h3>
+                </div>
+                <div>
+                    <h3 class="text-green-400">2.54%</h3>
+                </div>
+                <div>
+                    <h3>$ 949,401,445,934</h3>
+                </div>
+                <div>
+                    <h3>$ 19,339,530,530</h3>
+                </div>
+            </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,10 @@
+.is-rtl{
+	direction: rtl;
+}
+.is-ltr{
+	direction: ltr;
+}
+
+.d-none{
+	display: none;
+}

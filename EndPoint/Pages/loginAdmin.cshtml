@@ -1,0 +1,56 @@
+﻿@page
+@model EndPoint.Pages.loginAdminModel
+@{
+}
+@{
+    ViewData["Title"] = "login";
+}
+
+<section class="af a2E a1J[180px] a4D[120px] is-rtl">
+    <div class="ae">
+        <div class="a3i[-16px] aa a1L">
+            <div class="ab ak">
+                <div class="wow fadeInUp a3r aH[500px] a1X a1C a2l[#f5f5f5] a1 a2P dark:a4E dark:a3 sm:a4j[60px]" data-wow-delay="0s">
+                    <h3 class="a2d a2G a2B a1P a1k dark:aT sm:a2o">
+                        به حساب خود وارد شوید
+                    </h3>
+                    <div class="a2n aa ac a1t">
+                        <span class="ao aC[1px] ab aH[70px] a2m a4H sm:an"></span>
+                        <p class="ab a23 a2G a1F a1R aQ dark:aS">
+                            یا با ایمیل خود وارد شوید
+                        </p>
+                        <span class="ao aC[1px] ab aH[70px] a2m a4H sm:an"></span>
+                    </div>
+                    <form method="post">
+                        <div class="a2n">
+                            <label for="email" class="a2d an a1j a1R a2u dark:aT">
+                                ایمیل شما
+                            </label>
+                            <input type="email" name="Email" id="Email" placeholder="ایمیل خود را وارد کنید" class="a4F dark:a38 ab a1u a1C a27 a4z a22 aI a1F aS a4I a24 focus:a1H focus-visible:aM dark:a4G dark:a1w[#1F2656]">
+                        </div>
+                        <div class="a2n">
+                            <label for="password" id="password" class="a2d an a1j a1R a2u dark:aT">
+                                رمز عبور
+                            </label>
+                            <input type="password" name="Password" id="Password" placeholder="رمز عبور خود را وارد کنید" class="a4F dark:a38 ab a1u a1C a27 a4z a22 aI a1F aS a4I a24 focus:a1H focus-visible:aM dark:a4G dark:a1w[#1F2656]">
+                        </div>
+                        <div class="a2a">
+                            <button type="submit" class="hover:a38 aa ab ac a1t a1u a1A al a4K a1F a1R aT a3d a1c a4L hover:a4">
+                                ورود
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aq a8 a1a a2Z a2w ab a3D" style="
+          background-image: linear-gradient(
+            180deg,
+            #3e7dff 0%,
+            rgba(62, 125, 255, 0) 100%
+          );
+        "></div>
+    <img src="~/Theme/images/shapes/hero-shape-1.svg" alt="" class="aq a1a a8 a2Z" style="display: block; transform: scale(-1,1)">
+    <img src="~/Theme/images/shapes/hero-shape-2.svg" alt="" class="aq a19 a8 a2Z" style="display: block; transform: scale(-1,1)">
+</section>
