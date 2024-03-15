@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopManagement.Infrastructure.EFCore;
 
@@ -11,9 +12,11 @@ using ShopManagement.Infrastructure.EFCore;
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    partial class ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20240315140532_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,13 +41,11 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("LastDaysPriceChangePercent")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("LastDaysPriceChangePercent")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("LastDaysTradingVolume")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long>("LastDaysTradingVolume")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("LastUpdate")
                         .HasColumnType("datetime2");
@@ -59,22 +60,19 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("PriceInDollar")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("PriceInDollar")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("PriceInToman")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("PriceInToman")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Symbol")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("TotalMarketValue")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long>("TotalMarketValue")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -102,6 +100,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("PurchasePrice")
@@ -144,6 +143,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

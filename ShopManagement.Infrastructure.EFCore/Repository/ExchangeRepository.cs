@@ -20,7 +20,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
 
         public Exchange GetByName(string name)
         {
-            return _context.Exchanges.SingleOrDefault(e => e.Name == name);
+            return _context.Exchanges.FirstOrDefault(e => e.Name == name);
         }
 
     }

@@ -11,12 +11,13 @@ namespace ShopManagement.Domain.Exchange
     {
         public string Name { get; set; }
         public string Url { get; set; }
+        public string? Image { get; set; }
         public ExchangeType ExchangeType { get; set; }
     }
-
-    public enum ExchangeType 
+    public enum ExchangeType
     {
         Market = 1,
         Store = 2,
     }
+
 }

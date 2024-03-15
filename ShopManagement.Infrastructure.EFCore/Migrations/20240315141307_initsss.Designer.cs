@@ -12,8 +12,8 @@ using ShopManagement.Infrastructure.EFCore;
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20240315102633_initsdedf")]
-    partial class initsdedf
+    [Migration("20240315141307_initsss")]
+    partial class initsss
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,11 +41,13 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<decimal>("LastDaysPriceChangePercent")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("LastDaysPriceChangePercent")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("LastDaysTradingVolume")
-                        .HasColumnType("bigint");
+                    b.Property<string>("LastDaysTradingVolume")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("LastUpdate")
                         .HasColumnType("datetime2");
@@ -60,19 +62,22 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<decimal>("PriceInDollar")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("PriceInDollar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("PriceInToman")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("PriceInToman")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Symbol")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<long>("TotalMarketValue")
-                        .HasColumnType("bigint");
+                    b.Property<string>("TotalMarketValue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -98,6 +103,10 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
 
                     b.Property<long>("ExchangeID")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("PurchasePrice")
                         .HasColumnType("bigint");
@@ -137,6 +146,10 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
 
                     b.Property<int>("ExchangeType")
                         .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -22,7 +22,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
 
         public Coin GetBySymbol(string symbol)
         {
-            return _context.Coins.SingleOrDefault(e => e.Symbol == symbol);
+            return _context.Coins.FirstOrDefault(e => e.Symbol == symbol);
         }
     }
 }
