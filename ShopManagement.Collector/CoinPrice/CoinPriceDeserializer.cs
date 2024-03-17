@@ -31,6 +31,7 @@ namespace ShopManagement.Collector.CoinPrice
                 var cells = elem.QuerySelectorAll("td");
                 coinPriceDto.ExchangeName = cells[0].Children[0].Children[1].TextContent.Trim();
                 coinPriceDto.ExchangeUrl = cells[0].Children[0].Children[1].GetAttribute("href");
+                coinPriceDto.ExchangeImageAddress = "https://tokenbaz.com" + cells[0].Children[0].Children[1].Children[0].GetAttribute("src");
                 var exchangeType = cells[0].Children[1].TextContent.Trim();
                 if (exchangeType == "فروشگاه") coinPriceDto.ExchangeType = ExchangeType.Store;
                 if (exchangeType == "بازار") coinPriceDto.ExchangeType = ExchangeType.Market;

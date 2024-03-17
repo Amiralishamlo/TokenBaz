@@ -11,6 +11,7 @@ namespace ShopManagement.Domain.Exchange
     {
         public string Name { get; set; }
         public string Url { get; set; }
+        public string ImageAddress { get; set; }
         public ExchangeType ExchangeType { get; set; }
     }
 

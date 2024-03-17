@@ -25,6 +25,8 @@ namespace ShopManagement.Application
 
         public void AddCoinPrices(List<CoinPriceDto> coinPrices)
         {
+            _coinPriceRepository.DeleteAllPricesForThisCoin(coinPrices[0].CoinSymbol);
+            _coinPriceRepository.SaveChanges();
             foreach (CoinPriceDto coinPrice in coinPrices)
             {
                 try
@@ -34,7 +36,7 @@ namespace ShopManagement.Application
                     if (exchange == null)
                     {
                         exchange = BuildExchange(coinPrice);
-                        _exchangeRepository.Create(exchange);
+                        _exchangeRepository.Create(exchange!);
                         _exchangeRepository.SaveChanges();
                         exchange = _exchangeRepository.GetByName(coinPrice.ExchangeName);
                     }
@@ -73,6 +75,7 @@ namespace ShopManagement.Application
                 ExchangeType = (Domain.Exchange.ExchangeType)coinPrice.ExchangeType,
                 Name = coinPrice.ExchangeName,
                 Url = coinPrice.ExchangeUrl,
+                ImageAddress = coinPrice.ExchangeImageAddress,
             };
         }
     }

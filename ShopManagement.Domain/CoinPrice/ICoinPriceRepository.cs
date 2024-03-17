@@ -9,5 +9,6 @@ namespace ShopManagement.Domain.CoinPrice
 {
     public interface ICoinPriceRepository : IRepository<long, CoinPrice>
     {
+        void DeleteAllPricesForThisCoin(string coinSymbol);
     }
 }

@@ -55,11 +55,11 @@ internal class Program
         builder.Services.AddTransient<IExchangeRepository, ExchangeRepository>();
         builder.Services.AddCronJob<CoinJob>(c =>
         {
-            c.CronExpression = @"0/5 * * ? * * *";
+            c.CronExpression = @"0 0 0/6 1/1 * ? *";
         });
         builder.Services.AddCronJob<CoinPriceJob>(c =>
         {
-            c.CronExpression = @"0/5 * * ? * * *";
+            c.CronExpression = @"0 0 0/6 1/1 * ? *";
         });
     }
 

@@ -9,6 +9,7 @@ namespace ShopManagement.Application.Contracts.CoinPrice
     public class CoinPriceDto
     {
         public string CoinSymbol { get; set; }
+        public string ExchangeImageAddress { get; set; }
         public string ExchangeName { get; set; }
         public string ExchangeUrl { get; set; }
         public ExchangeType ExchangeType { get; set; }
