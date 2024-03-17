@@ -1,16 +1,10 @@
 ﻿using _01_LampshadeQuery.Contracts.Coin;
-using _01_LampshadeQuery.Contracts.Product;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Infrastructure.EFCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01_LampshadeQuery.Query
 {
-	public class CoinQuery:ICoinQuery
+    public class CoinQuery:ICoinQuery
 	{
 		private readonly ShopContext _context;
 
@@ -32,11 +26,25 @@ namespace _01_LampshadeQuery.Query
 				SalesVolume=product.SalesVolume,
 				TransactionFee = product.TransactionFee,
 				Image=product.Image,
+				MarketType=((int)product.Exchange.ExchangeType)
 			}).ToList();
 
 
 
 			return products;
 		}
-	}
+
+        public CoinParentQueryModels GetCoinParents(long id)
+        {
+            var products = _context.Coins.Where(x => x.Id == id)
+            .Select(product => new CoinParentQueryModels
+            {
+				Image=product.ImageAddress,
+				Name=product.Name,
+				Symbole=product.Symbol
+            }).FirstOrDefault();
+
+            return products;
+        }
+    }
 }

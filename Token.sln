@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blog", "Blog", "{9B94C0EC-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{7304D46B-B515-4B0E-87AE-0D0D8CFB3F1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Collector", "ShopManagement.Collector\ShopManagement.Collector.csproj", "{45000D98-9F73-48B4-949A-2F3F51EE53E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Collector", "ShopManagement.Collector\ShopManagement.Collector.csproj", "{45000D98-9F73-48B4-949A-2F3F51EE53E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

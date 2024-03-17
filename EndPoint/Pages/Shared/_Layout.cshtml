@@ -25,7 +25,7 @@
       {
         scrolledFromTop: false
       }
-    " x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" class="a1 dark:a2">
+    " x-init="window.pageYOffset >= 30 ? scrolledFromTop = true : scrolledFromTop = true" scroll.window="window.pageYOffset >= 30 ? scrolledFromTop = true : scrolledFromTop = true" class="a1 dark:a2">
 
     <header x-data="
         {
@@ -51,39 +51,19 @@
                         <nav :class="!navbarOpen &amp;&amp; 'ao' " id="navbarCollapse" class="aq ar aG ab aH[250px] au a1 al aI aJ dark:a2 lg:aK lg:an lg:ab lg:aj lg:a7 lg:aL lg:aM dark:lg:a7">
                             <ul class="aN lg:aa">
                                 <li class="aQ dark:aS">
-                                    <a href="~/Theme/#home" class="scroll-menu aa am aO aP aR hover:aR dark:aT dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
+                                    <a href="/index" class="scroll-menu aa am aO aP aR hover:aR dark:aT dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
                                         خانه
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="~/Theme/#roadmap" class="scroll-menu aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
-                                        صرافی
+                                    <a href="/coins" class="scroll-menu aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
+                                        سکه ها
                                     </a>
                                 </li>
-                                <li class="aZ submenu-item af">
-                                    <a href="~/Theme/javascript:void(0)" onclick="dropdownOpen = !dropdownOpen" class="af aa am aO aP aQ after:aq after:a_ after:as/2 after:a10[-2px] after:a11 after:a12 after:a13[-50%] after:az after:a14 after:a15 after:a16 group-hover:aR dark:aS dark:group-hover:aT lg:aU lg:aV lg:aW lg:a17 lg:a18 lg:after:a19 xl:aX 2xl:aY">
-                                        صفحات
+                                <li>
+                                    <a href="/Articales" class="scroll-menu aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
+                                        مقاله ها
                                     </a>
-                                    <div :class="dropdownOpen ? 'an' : 'ao lg:an ' " class="submenu af aG a1a au a1 a1b[top] a1c group-hover:a1d dark:a2 lg:a1e lg:aq lg:aA[115%] lg:aD[250px] lg:a1f lg:aE lg:a1g lg:group-hover:a1h lg:group-hover:aG">
-                                        <a href="~/Theme/blog-grid.html" class="an a1i aw[10px] a1j a1k hover:aR dark:aT dark:hover:aR lg:ak">
-                                            صفحه گریدویو وبلاگ
-                                        </a>
-                                        <a href="~/Theme/blog-details.html" class="an a1i aw[10px] a1j a1k hover:aR dark:aT dark:hover:aR lg:ak">
-                                            صفحه جزئیات وبلاگ
-                                        </a>
-                                        <a href="~/Theme/token-sale.html" class="an a1i aw[10px] a1j a1k hover:aR dark:aT dark:hover:aR lg:ak">
-                                            صفحه فروش توکن
-                                        </a>
-                                        <a href="~/Theme/support.html" class="an a1i aw[10px] a1j a1k hover:aR dark:aT dark:hover:aR lg:ak">
-                                            صفحه پشتیبانی
-                                        </a>
-                                        <a href="~/Theme/signin.html" class="an a1i aw[10px] a1j a1k hover:aR dark:aT dark:hover:aR lg:ak">
-                                            صفحه ورود
-                                        </a>
-                                        <a href="~/Theme/signup.html" class="an a1i aw[10px] a1j a1k hover:aR dark:aT dark:hover:aR lg:ak">
-                                            صفحه ثبت نام
-                                        </a>
-                                    </div>
                                 </li>
                                 <li>
                                     <a href="~/Theme/#contact" class="scroll-menu aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
@@ -109,11 +89,15 @@
                                 </span>
                             </label>
                         </div>
-                        <div class="ao sm:aa">
-                            <a href="~/Theme/signin.html" class="aa ac a1t a1u a1C a1D aw[9px] a1E a1F aP aQ a1G hover:a1H hover:a1A hover:aT dark:a1I dark:aT dark:hover:a1 dark:hover:aR lg:px-4 xl:px-8">
-                                ورود
-                            </a>
-                        </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            <div class="ao sm:aa">
+                                <a href="/Administration/index" class="aa ac a1t a1u a1C a1D aw[9px] a1E a1F aP aQ a1G hover:a1H hover:a1A hover:aT dark:a1I dark:aT dark:hover:a1 dark:hover:aR lg:px-4 xl:px-8">
+                                    ادمین
+                                </a>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -3,5 +3,6 @@
 	public interface ICoinQuery
 	{
 		List<CoinQueryModels> GetCoin(long id);
+		CoinParentQueryModels GetCoinParents(long id);
 	}
 }

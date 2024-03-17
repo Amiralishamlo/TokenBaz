@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class inits : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,11 +21,11 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     Symbol = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Link = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     ImageAddress = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    PriceInToman = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PriceInDollar = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    LastDaysPriceChangePercent = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TotalMarketValue = table.Column<long>(type: "bigint", nullable: false),
-                    LastDaysTradingVolume = table.Column<long>(type: "bigint", nullable: false),
+                    PriceInToman = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PriceInDollar = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastDaysPriceChangePercent = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TotalMarketValue = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastDaysTradingVolume = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastUpdate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -42,7 +42,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ExchangeType = table.Column<int>(type: "int", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -80,7 +80,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CoinID = table.Column<long>(type: "bigint", nullable: false),
                     ExchangeID = table.Column<long>(type: "bigint", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PurchasePrice = table.Column<long>(type: "bigint", nullable: false),
                     PurchaseVolume = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     SalesPrice = table.Column<long>(type: "bigint", nullable: false),

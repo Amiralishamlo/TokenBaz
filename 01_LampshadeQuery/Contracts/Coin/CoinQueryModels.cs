@@ -1,4 +1,6 @@
-﻿namespace _01_LampshadeQuery.Contracts.Coin
+﻿
+
+namespace _01_LampshadeQuery.Contracts.Coin
 {
 	public class CoinQueryModels
 	{
@@ -9,6 +11,13 @@
 		public string TransactionFee { get; set; }
 		public string Name { get; set; }
 		public string Url { get; set; }
+		public string Image { get; set; }
+        public int MarketType{ get; set; }
+    }
+	public	class CoinParentQueryModels
+	{
+        public string Name { get; set; }
+        public string Symbole { get; set; }
         public string Image { get; set; }
     }
 }

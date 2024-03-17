@@ -14,8 +14,10 @@ namespace EndPoint.Pages
 		}
 
 		public List<CoinQueryModels> CoinQueryModels;
+        public CoinParentQueryModels CoinParent;
         public void OnGet(long id)
         {
+            CoinParent=coinQuery.GetCoinParents(id);
             CoinQueryModels = coinQuery.GetCoin(id);
         }
     }

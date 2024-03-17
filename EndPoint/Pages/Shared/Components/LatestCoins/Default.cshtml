@@ -1,18 +1,16 @@
-﻿@page
-@model EndPoint.Pages.CoinModel
-@{
-}
+﻿@model List<_01_LampshadeQuery.Contracts.Coin.CoinQueryModels>
+
 <section id="roadmap" class="af a2E aw[120px] is-rtl">
     <div class=" dark:aT">
         <h1 class="xl:text-2xl md:text-xl font-bold " style="margin-right:50px;">مقایسه قیمت صرافی های ایرانی : </h1>
         <div class="flex md:hidden justify-between p-12 items-center ">
             <div class="flex py-4 items-center" style="margin-left:20px;">
-                <div  style="width:40px;height:40px;">
-                    <img style="width:40px;height:40px;" src="@Model.CoinParent.Image" alt="">
+                <div style="width:40px;height:40px;">
+                    <img style="width:40px;height:40px;" src="https://tokenbaz.com/images/coins/small-size/tether.png" alt="">
                 </div>
                 <div class="flex-col mr-4">
-                    <h2 class="xl:text-2xl ">@Model.CoinParent.Name</h2>
-                    <p class="xl:text-xl ">@Model.CoinParent.Symbole</p>
+                    <h2 class="xl:text-2xl ">Tether</h2>
+                    <p class="xl:text-xl ">USDT</p>
                 </div>
             </div>
             <div class="flex ml-8">
@@ -29,11 +27,11 @@
         <div class="hidden md:flex justify-between p-12 items-center ">
             <div class="flex px-16 py-4 items-center">
                 <div style="width:80px;height:80px;">
-                    <img style="width:80px;height:80px;" src="@Model.CoinParent.Image" alt="">
+                    <img style="width:80px;height:80px;" src="https://tokenbaz.com/images/coins/small-size/tether.png" alt="">
                 </div>
                 <div class="flex-col mr-4" style="margin-right:8px;">
-                    <h2 class="xl:text-2xl font-bold ">@Model.CoinParent.Name</h2>
-                    <p class="xl:text-xl font-bold text-green-400"> @Model.CoinParent.Symbole</p>
+                    <h2 class="xl:text-2xl font-bold ">Tether</h2>
+                    <p class="xl:text-xl font-bold text-green-400"> USDT</p>
                 </div>
             </div>
             <div class="flex ml-8">
@@ -77,8 +75,8 @@
             <h3 class="lg:w-40 xl:w-48"></h3>
             <h3 class="lg:w-36 xl:w-44"></h3>
         </div>
-        
-        @foreach(var item in Model.CoinQueryModels)
+
+        @foreach (var item in Model)
         {
             <!--Mobile-->
             <div class="flex lg:hidden justify-between items-center p-2 font-bold border-b-2 border-slate-500 text-xs md:text-lg">
@@ -143,7 +141,7 @@
                     </h3>
                 </div>
                 <div>
-                    @if (item.PurchaseVolume==0||item.PurchaseVolume==null)
+                    @if (item.PurchaseVolume == 0 || item.PurchaseVolume == null)
                     {
                         <h3>0.0</h3>
                     }

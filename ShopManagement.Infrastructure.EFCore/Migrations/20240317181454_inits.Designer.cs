@@ -12,8 +12,8 @@ using ShopManagement.Infrastructure.EFCore;
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20240315141307_initsss")]
-    partial class initsss
+    [Migration("20240317181454_inits")]
+    partial class inits
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,7 +105,6 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("PurchasePrice")
@@ -147,7 +146,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.Property<int>("ExchangeType")
                         .HasColumnType("int");
 
-                    b.Property<string>("Image")
+                    b.Property<string>("ImageAddress")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

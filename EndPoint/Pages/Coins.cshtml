@@ -38,17 +38,17 @@
                 </div>
                 <div>
                     <h3 class="">
-                        $48,308
+                       تومان @item.PriceInDollar
                     </h3>
                 </div>
                 <div>
-                    <h3>$ 19,339,530,530</h3>
+                    <h3>@item.LastDaysTradingVolume</h3>
                 </div>
             </div>
             <!--Desktop-->
             <div class="hidden  justify-between items-center p-8 lg:flex border-b-2 border-slate-500 mx-8 font-bold lg:text-md xl:text-lg">
                 <div class="block">
-                    <div class="w-12 flex">
+                    <div class="w-12 flex" style="height:50px">
                         <img class="w-10 bg-gray-100" src="@item.ImageAddress" alt="">
                         <div class="flex-row px-2">
                             <a asp-page="coin" asp-route-id="@item.Id"><h3 class="">@item.Name</h3></a>
@@ -57,18 +57,21 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="">
-                        $48,308
+                    <h3 class="" style="width:180px;text-align:center">
+                        <p> @item.PriceInDollar تومان</p>
+                        <p >@item.PriceInToman</p>
                     </h3>
                 </div>
                 <div>
-                    <h3 class="text-green-400">2.54%</h3>
+                    <h3 class="text-green-400">@item.LastDaysTradingVolume</h3>
                 </div>
                 <div>
-                    <h3>$ 949,401,445,934</h3>
+                    <h3>
+                        @item.TotalMarketValue
+                    </h3>
                 </div>
                 <div>
-                    <h3>$ 19,339,530,530</h3>
+                    <h3>@item.LastDaysPriceChangePercent</h3>
                 </div>
             </div>
         }

@@ -15,6 +15,22 @@ public class ArticleQuery : IArticleQuery
         _context = context;
     }
 
+    public List<ArticleQueryModel> Articles()
+    {
+        return _context.Articles
+            .Include(x => x.Category)
+            .Select(x => new ArticleQueryModel
+            {
+                Title = x.Title,
+                Slug = x.Slug,
+                Picture = x.Picture,
+                PictureAlt = x.PictureAlt,
+                PictureTitle = x.PictureTitle,
+                PublishDate = x.PublishDate.ToFarsi(),
+                ShortDescription = x.ShortDescription
+            }).ToList();
+    }
+
     public ArticleQueryModel GetArticleDetails(string slug)
     {
         var article = _context.Articles
