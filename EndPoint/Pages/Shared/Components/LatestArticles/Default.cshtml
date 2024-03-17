@@ -45,9 +45,12 @@
                             </div>
                             <h3>
                                 <a asp-page="Article" asp-route-id="@item.Slug" class="a1N an a1O a1P a2u hover:aR dark:aT dark:hover:aR sm:a2B lg:aO xl:a2B">
-                                    @item.ShortDescription
+                                    @item.Title
                                 </a>
                             </h3>
+                            <p class="a1F a1R aQ dark:aS">
+                                @item.ShortDescription
+                            </p>
                         </div>
                     </div>
                 </div>
