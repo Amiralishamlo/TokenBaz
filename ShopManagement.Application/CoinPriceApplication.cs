@@ -42,6 +42,7 @@ namespace ShopManagement.Application
                     }
                     CoinPrice entity = BuildCoinPrice(coinPrice);
                     entity.CoinID = coin.Id;
+                    entity.Image = coinPrice.Image;
                     entity.ExchangeID = exchange.Id;
                     _coinPriceRepository.Create(entity);
                     _coinPriceRepository.SaveChanges();
@@ -60,6 +61,7 @@ namespace ShopManagement.Application
                 CreationDate = DateTime.Now,
                 Date = coinPrice.Date,
                 PurchasePrice = coinPrice.PurchasePrice,
+                Image=coinPrice.Image,
                 PurchaseVolume = coinPrice.PurchaseVolume,
                 SalesPrice = coinPrice.SalesPrice,
                 SalesVolume = coinPrice.SalesVolume,

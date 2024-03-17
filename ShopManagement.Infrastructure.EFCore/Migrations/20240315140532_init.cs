@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ShopManagement.Infrastructure.EFCore.Migrations
 {
     /// <inheritdoc />
-    public partial class initsdedf : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -42,6 +42,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ExchangeType = table.Column<int>(type: "int", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -79,6 +80,7 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CoinID = table.Column<long>(type: "bigint", nullable: false),
                     ExchangeID = table.Column<long>(type: "bigint", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PurchasePrice = table.Column<long>(type: "bigint", nullable: false),
                     PurchaseVolume = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     SalesPrice = table.Column<long>(type: "bigint", nullable: false),

@@ -30,7 +30,8 @@ namespace _01_LampshadeQuery.Query
 				PurchaseVolume=product.PurchaseVolume,
 				SalesPrice=product.SalesPrice,
 				SalesVolume=product.SalesVolume,
-				TransactionFee = product.TransactionFee
+				TransactionFee = product.TransactionFee,
+				Image=product.Image,
 			}).ToList();
 
 

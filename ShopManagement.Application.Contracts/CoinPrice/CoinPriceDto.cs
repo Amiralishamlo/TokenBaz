@@ -12,6 +12,7 @@ namespace ShopManagement.Application.Contracts.CoinPrice
         public string ExchangeImageAddress { get; set; }
         public string ExchangeName { get; set; }
         public string ExchangeUrl { get; set; }
+        public string Image { get; set; }
         public ExchangeType ExchangeType { get; set; }
         public long PurchasePrice { get; set; }
         public decimal? PurchaseVolume { get; set; }

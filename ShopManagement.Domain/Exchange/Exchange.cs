@@ -14,10 +14,10 @@ namespace ShopManagement.Domain.Exchange
         public string ImageAddress { get; set; }
         public ExchangeType ExchangeType { get; set; }
     }
-
-    public enum ExchangeType 
+    public enum ExchangeType
     {
         Market = 1,
         Store = 2,
     }
+
 }

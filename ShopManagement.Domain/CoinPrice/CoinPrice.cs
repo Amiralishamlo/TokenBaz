@@ -20,7 +20,7 @@ namespace ShopManagement.Domain.CoinPrice
         public virtual Exchange.Exchange Exchange { get; set; }
 
 
-
+        public string? Image { get; set; }
         public long PurchasePrice { get; set; }
         public decimal? PurchaseVolume{ get; set; }
         public long SalesPrice { get; set; }

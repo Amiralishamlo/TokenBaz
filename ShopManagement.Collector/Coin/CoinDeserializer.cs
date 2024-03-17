@@ -1,11 +1,6 @@
 ﻿using AngleSharp.Html.Parser;
 using AngleSharp;
 using ShopManagement.Application.Contracts.Coin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopManagement.Collector.Coin
 {
@@ -25,11 +20,18 @@ namespace ShopManagement.Collector.Coin
             {
                 var coinDto = new CoinDto();
                 var aTags = elem.QuerySelectorAll(".coins-table-name-cell a");
+                var price = elem.QuerySelectorAll(".coins-table-price-cell");
+                var change = elem.QuerySelectorAll(".coins-table-cell");
 
                 coinDto.ImageAddress = "https://tokenbaz.com" + aTags[0].Children[0].GetAttribute("src");
                 coinDto.Link = aTags[0].GetAttribute("href");
                 coinDto.Name = aTags[1].Children[0].TextContent;
                 coinDto.Symbol = aTags[1].Children[2].TextContent;
+                coinDto.PriceInToman = price[0].Children[0].TextContent.Trim();
+                coinDto.PriceInDollar = price[0].Children[2].TextContent.Trim();
+                coinDto.TotalMarketValue = change[1].TextContent.Trim();
+                coinDto.LastDaysTradingVolume = change[0].TextContent.Trim();
+                coinDto.LastDaysPriceChangePercent = change[2].TextContent.Trim();
                 result.Add( coinDto);
             }
 
