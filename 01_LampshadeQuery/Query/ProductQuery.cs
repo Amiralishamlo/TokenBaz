@@ -33,6 +33,7 @@ public class ProductQuery : IProductQuery
                 Keywords = x.Keywords,
                 MetaDescription = x.MetaDescription,
                 ShortDescription = x.ShortDescription,
+                
             }).AsNoTracking().FirstOrDefault(x => x.Slug == slug);
 
         if (product == null)

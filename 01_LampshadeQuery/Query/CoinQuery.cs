@@ -25,7 +25,7 @@ namespace _01_LampshadeQuery.Query
 				SalesPrice=product.SalesPrice,
 				SalesVolume=product.SalesVolume,
 				TransactionFee = product.TransactionFee,
-				Image=product.Image,
+				Image=product.Exchange.ImageAddress,
 				MarketType=((int)product.Exchange.ExchangeType)
 			}).ToList();
 

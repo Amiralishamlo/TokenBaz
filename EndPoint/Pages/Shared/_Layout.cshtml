@@ -20,6 +20,7 @@
         // ===== wow js
         new WOW().init();
     </script>
+    @RenderSection("Styles", false)
 </head>
 <body x-data="
       {
@@ -51,23 +52,18 @@
                         <nav :class="!navbarOpen &amp;&amp; 'ao' " id="navbarCollapse" class="aq ar aG ab aH[250px] au a1 al aI aJ dark:a2 lg:aK lg:an lg:ab lg:aj lg:a7 lg:aL lg:aM dark:lg:a7">
                             <ul class="aN lg:aa">
                                 <li class="aQ dark:aS">
-                                    <a href="/index" class="scroll-menu aa am aO aP aR hover:aR dark:aT dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
+                                    <a href="/index" class=" aa am aO aP aR hover:aR dark:aT dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
                                         خانه
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/coins" class="scroll-menu aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
+                                    <a href="/coins" class=" aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
                                         سکه ها
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/Articales" class="scroll-menu aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
+                                    <a href="/Articales" class=" aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
                                         مقاله ها
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Theme/#contact" class="scroll-menu aa am aO aP aQ hover:aR dark:aS dark:hover:aT lg:aU lg:aV lg:aW xl:aX 2xl:aY">
-                                        پشتیبانی
                                     </a>
                                 </li>
                             </ul>

@@ -81,7 +81,7 @@
             <!--Mobile-->
             <div class="flex lg:hidden justify-between items-center p-2 font-bold border-b-2 border-slate-500 text-xs md:text-lg">
                 <div class="flex-row justify-center w-10">
-                    <img class="w-10 bg-gray-100" src="@item.Image" alt="">
+                    <img class="w-10 bg-gray-200" src="@item.Image" alt="">
                     <h3 class=" mt-1">@item.Name</h3>
                     @if (item.MarketType == 1)
                     {
@@ -121,9 +121,9 @@
             <div class="hidden  justify-between items-center p-8 lg:flex border-b-2 border-slate-500 mx-8 font-bold lg:text-md xl:text-lg">
                 <div class="block">
                     <div class="w-12 flex">
-                        <img class="w-10 bg-gray-100" src="@item.Image" alt="">
+                        <img class="w-10 bg-gray-200 rounded-3" style="height:50px;" src="@item.Image" alt="">
                         <div class="flex-row px-2">
-                            <h3 class="">@item.Name</h3>
+                            <h3 class="" style="text-align:center;width:50px">@item.Name</h3>
                             @if (item.MarketType == 1)
                             {
                                 <p class="text-center  text-green-400">بازار</p>

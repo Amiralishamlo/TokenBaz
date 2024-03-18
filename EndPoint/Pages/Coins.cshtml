@@ -32,7 +32,7 @@
             <!--Mobile-->
             <div class="flex lg:hidden justify-between items-center p-2 font-bold border-b-2 border-slate-500 text-xs md:text-lg">
                 <div class="flex-row justify-center w-10">
-                    <img class="w-10 bg-gray-100" src="@item.ImageAddress" alt="">
+                    <img class="w-10 bg-gray-200" src="@item.ImageAddress" alt="">
                     <a asp-action="Coin" asp-route-Id="@item.Id"><h3 class=" mt-1">@item.Name</h3></a>
                     <a asp-action="Coin" asp-route-Id="@item.Id"><p class=" text-yellow-400 text-center mt-1">@item.Symbol</p></a>
                 </div>
@@ -49,7 +49,7 @@
             <div class="hidden  justify-between items-center p-8 lg:flex border-b-2 border-slate-500 mx-8 font-bold lg:text-md xl:text-lg">
                 <div class="block">
                     <div class="w-12 flex" style="height:50px">
-                        <img class="w-10 bg-gray-100" src="@item.ImageAddress" alt="">
+                        <img class="w-10 bg-gray-200" src="@item.ImageAddress" alt="">
                         <div class="flex-row px-2">
                             <a asp-page="coin" asp-route-id="@item.Id"><h3 class="">@item.Name</h3></a>
                             <a asp-page="coin" asp-route-id="@item.Id"><p class="text-center  text-yellow-400">@item.Symbol</p></a>

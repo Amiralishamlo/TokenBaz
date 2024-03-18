@@ -31,8 +31,8 @@ internal class Program
         var app = builder.Build();
 
 
-        //RunForDevelop(app);
-        app.Run();
+        RunForDevelop(app);
+        //app.Run();
 
 
 
