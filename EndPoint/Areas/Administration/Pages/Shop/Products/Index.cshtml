@@ -6,14 +6,14 @@
 
 @{
     Layout = "Shared/_AdminLayout";
-    ViewData["title"] = "مدیریت محصولات";
+    ViewData["title"] = "مدیریت صرافیات";
 }
 
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" asp-page="./Create">ایجاد محصول جدید</a>
+            <a class="btn btn-success btn-lg" asp-page="./Create">ایجاد صرافی جدید</a>
         </p>
     </div>
 </div>
@@ -22,13 +22,13 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">جستجو در محصولات</h3>
+                <h3 class="panel-title">جستجو در صرافیات</h3>
             </div>
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.Name"></label>
-                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام محصول">
+                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام صرافی">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.Code"></label>
@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.CategoryId"></label>
                         <select class="form-control" asp-for="SearchModel.CategoryId" asp-items="Model.ProductCategories">
-                            <option value="0">گروه محصولی ...</option>
+                            <option value="0">گروه صرافیی ...</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
@@ -52,7 +52,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">لیست محصولات (@Model.Products.Count)</h3>
+                <h3 class="panel-title">لیست صرافیات (@Model.Products.Count)</h3>
             </div>
             <div class="panel-body">
                 <div class="row">

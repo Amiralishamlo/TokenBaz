@@ -28,12 +28,12 @@ public class ProductApplication : IProductApplication
             return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
         var slug = command.Slug.Slugify();
-        var categorySlug = _productCategoryRepository.GetSlugById(command.CategoryId);
+        var categorySlug = _productCategoryRepository.GetSlugById(1);
         var path = $"{categorySlug}/{slug}";
         var pictureName = _fileUploader.Upload(command.Picture, path);
 
         var article = new Product(command.Name, command.Code, command.ShortDescription, command.Description,
-            pictureName, command.PictureAlt, command.PictureTitle, command.CategoryId, slug, command.Keywords, command.MetaDescription,command.noSarafi,command.hadAksarZamanHoviat,command.TolSarafi,command.TedadKarmand,command.KarmozdBazarToman,command.BazarTeteri,command.HadKharid,command.HadForosh,command.KifPolEkhtesasi,command.GhabeliatTabdilMogodiKochak,command.SystemDaramadZayi,command.TwoLogin,command.Application,command.Information,command.PayePoly,command.PoshtibaniShabake,command.Tasvie,command.Email,command.Phone,command.Addres,command.NaghdBaresi,command.Url);
+            pictureName, command.PictureAlt, command.PictureTitle, 1, slug, command.Keywords, command.MetaDescription,command.noSarafi,command.hadAksarZamanHoviat,command.TolSarafi,command.TedadKarmand,command.KarmozdBazarToman,command.BazarTeteri,command.HadKharid,command.HadForosh,command.KifPolEkhtesasi,command.GhabeliatTabdilMogodiKochak,command.SystemDaramadZayi,command.TwoLogin,command.Application,command.Information,command.PayePoly,command.PoshtibaniShabake,command.Tasvie,command.Email,command.Phone,command.Addres,".",command.Url);
 
         _productRepository.Create(article);
         _productRepository.SaveChanges();
@@ -56,7 +56,7 @@ public class ProductApplication : IProductApplication
         var pictureName = _fileUploader.Upload(command.Picture, path);
 
         article.Edit(command.Name, command.Code, command.ShortDescription, command.Description,
-            pictureName, command.PictureAlt, command.PictureTitle, command.CategoryId, slug, command.Keywords, command.MetaDescription, command.noSarafi, command.hadAksarZamanHoviat, command.TolSarafi, command.TedadKarmand, command.KarmozdBazarToman, command.BazarTeteri, command.HadKharid, command.HadForosh, command.KifPolEkhtesasi, command.GhabeliatTabdilMogodiKochak, command.SystemDaramadZayi, command.TwoLogin, command.Application, command.Information, command.PayePoly, command.PoshtibaniShabake, command.Tasvie, command.Email, command.Phone, command.Addres, command.NaghdBaresi, command.Url);
+            pictureName, command.PictureAlt, command.PictureTitle, 1, slug, command.Keywords, command.MetaDescription, command.noSarafi, command.hadAksarZamanHoviat, command.TolSarafi, command.TedadKarmand, command.KarmozdBazarToman, command.BazarTeteri, command.HadKharid, command.HadForosh, command.KifPolEkhtesasi, command.GhabeliatTabdilMogodiKochak, command.SystemDaramadZayi, command.TwoLogin, command.Application, command.Information, command.PayePoly, command.PoshtibaniShabake, command.Tasvie, command.Email, command.Phone, command.Addres,".", command.Url);
 
         _productRepository.SaveChanges();
         return operation.Succedded();

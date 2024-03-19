@@ -33,8 +33,29 @@ public class ProductQuery : IProductQuery
                 Keywords = x.Keywords,
                 MetaDescription = x.MetaDescription,
                 ShortDescription = x.ShortDescription,
-                
-            }).AsNoTracking().FirstOrDefault(x => x.Slug == slug);
+                Addres= x.Addres,
+                Application=x.Application,
+                BazarTeteri= x.BazarTeteri,
+                Email= x.Email,
+                PayePoly= x.PayePoly,
+                GhabeliatTabdilMogodiKochak=x.GhabeliatTabdilMogodiKochak,
+                hadAksarZamanHoviat= x.hadAksarZamanHoviat,
+                HadForosh= x.HadForosh,
+                HadKharid = x.HadKharid,
+                Information= x.Information,
+                KarmozdBazarToman = x.KarmozdBazarToman,
+                noSarafi = x.noSarafi,
+                Phone= x.Phone,
+                PoshtibaniShabake = x.PoshtibaniShabake,
+                KifPolEkhtesasi = x.KifPolEkhtesasi,
+                TolSarafi = x.TolSarafi,
+                TwoLogin= x.TwoLogin,
+                Url= x.Url,
+                Tasvie = x.Tasvie,
+                TedadKarmand = x.TedadKarmand,
+                SystemDaramadZayi = x.SystemDaramadZayi,
+                NaghdBaresi = x.NaghdBaresi,
+            }).FirstOrDefault(x => x.Name.Trim() == slug.Trim() || x.Slug.Trim() ==slug.Trim());
 
         if (product == null)
             return new ProductQueryModel();

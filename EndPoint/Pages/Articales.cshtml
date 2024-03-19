@@ -37,7 +37,7 @@
             {
                 <div class="ab ak md:a1M/2 lg:a1M/3">
                     <div class="wow fadeInUp a1W a2c au a1v dark:a1w[#14102C]" data-wow-delay="0s">
-                        <a href="blog-details.html" class="an">
+                        <a asp-page="Article" asp-route-id="@item.Slug" class="an">
                             <img src="~/ProductPictures/@item.Picture" alt="@item.PictureAlt" class="ab">
                         </a>
                         <div class="a3h lg:aI xl:a29">
@@ -60,7 +60,7 @@
                                 </p>
                             </div>
                             <h3>
-                                <a href="blog-details.html" class="a1N an a1O a1P a2u hover:aR dark:aT dark:hover:aR sm:a2B lg:aO xl:a2B">
+                                <a asp-page="Article" asp-route-id="@item.Slug" class="a1N an a1O a1P a2u hover:aR dark:aT dark:hover:aR sm:a2B lg:aO xl:a2B">
                                     @item.Title
                                 </a>
                             </h3>

@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">ویرایش محصول @Model.Command.Name </h3>
+                <h3 class="panel-title"> صرافی ویرایش @Model.Command.Name</h3>
             </div>
             <div class="panel-body">
                 <form method="post" enctype="multipart/form-data">
@@ -35,19 +35,184 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.noSarafi" class="control-label">نوع صرافی</label>
+                                <input type="text" class="form-control" asp-for="Command.noSarafi">
+                                <span asp-validation-for="Command.noSarafi" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.hadAksarZamanHoviat" class="control-label">حداکثر زمان احراز هویت</label>
+                                <input type="text" class="form-control" asp-for="Command.hadAksarZamanHoviat">
+                                <span asp-validation-for="Command.hadAksarZamanHoviat" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.TolSarafi" class="control-label">
+                                    عمر صرافی
+                                </label>
+                                <input class="form-control " asp-for="Command.TolSarafi">
+                                <span asp-validation-for="Command.TolSarafi" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.TedadKarmand" class="control-label">تعداد کارمندان</label>
+                                <input type="text" class="form-control" asp-for="Command.TedadKarmand">
+                                <span asp-validation-for="Command.TedadKarmand" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.KarmozdBazarToman" class="control-label">کارمزد بازار تومانی</label>
+                                <input type="text" class="form-control" asp-for="Command.KarmozdBazarToman">
+                                <span asp-validation-for="Command.KarmozdBazarToman" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.BazarTeteri" class="control-label">بازار تتری</label>
+                                <input class="form-control " asp-for="Command.BazarTeteri">
+                                <span asp-validation-for="Command.BazarTeteri" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.HadKharid" class="control-label">
+                                    حداقل خرید
+                                </label>
+                                <input type="text" class="form-control" asp-for="Command.HadKharid">
+                                <span asp-validation-for="Command.HadKharid" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.HadForosh" class="control-label">
+                                    حداقل فروش
+                                </label>
+                                <input type="text" class="form-control" asp-for="Command.HadForosh">
+                                <span asp-validation-for="Command.HadForosh" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.KifPolEkhtesasi" class="control-label">کیف پول اختصاصی</label>
+                                <input class="form-control " asp-for="Command.KifPolEkhtesasi">
+                                <span asp-validation-for="Command.KifPolEkhtesasi" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.Information" class="control-label">
+                                    راه های ارتباطی
+                                </label>
+                                <input type="text" class="form-control" asp-for="Command.Information">
+                                <span asp-validation-for="Command.Information" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.PayePoly" class="control-label">پایه پولی</label>
+                                <input class="form-control " asp-for="Command.PayePoly">
+                                <span asp-validation-for="Command.PayePoly" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.Application" class="control-label">اپلیکیشن موبایل</label>
+                                <input type="checkbox" class="form-control" asp-for="Command.Application" onchange="makeSlug('Title', 'Slug')">
+                                <span asp-validation-for="Command.Application" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.GhabeliatTabdilMogodiKochak" class="control-label">قابلیت تبدیل موجودی های کوچک</label>
+                                <input type="checkbox" class="form-control" asp-for="Command.GhabeliatTabdilMogodiKochak" onchange="makeSlug('Title', 'Slug')">
+                                <span asp-validation-for="Command.GhabeliatTabdilMogodiKochak" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.SystemDaramadZayi" class="control-label">سیستم درآمد زایی</label>
+                                <input type="checkbox" class="form-control" asp-for="Command.SystemDaramadZayi">
+                                <span asp-validation-for="Command.SystemDaramadZayi" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Command.TwoLogin" class="control-label">ورود دو مرحله ای</label>
+                                <input class="form-control " asp-for="Command.TwoLogin">
+                                <span asp-validation-for="Command.TwoLogin" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="Command.Picture" class="control-label">عکس</label>
-                                <input type="file" class="form-control" asp-for="Command.Picture" accept="image/*">
-                                <span asp-validation-for="Command.Picture" class="error"></span>
+                                <label asp-for="Command.PoshtibaniShabake" class="control-label">
+                                    پشتیبانی از شبکه
+                                </label>
+                                <input type="text" class="form-control" asp-for="Command.PoshtibaniShabake">
+                                <span asp-validation-for="Command.PoshtibaniShabake" class="error"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="Command.CategoryId">گروه محصول</label>
-                                <select class="form-control" asp-for="Command.CategoryId" asp-items="Model.ProductCategories">
-                                    <option value="0">گروه محصول ...</option>
-                                </select>
+                                <label asp-for="Command.Url" class="control-label">لینک صرافی</label>
+                                <input type="text" class="form-control" asp-for="Command.Url">
+                                <span asp-validation-for="Command.Url" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.Phone" class="control-label">شماره</label>
+                                <input type="text" class="form-control" asp-for="Command.Phone">
+                                <span asp-validation-for="Command.Phone" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.Email" class="control-label">ایمیل</label>
+                                <input type="text" class="form-control" asp-for="Command.Email">
+                                <span asp-validation-for="Command.Email" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.Addres" class="control-label">ادرس</label>
+                                <input type="text" class="form-control" asp-for="Command.Addres">
+                                <span asp-validation-for="Command.Addres" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Command.Tasvie" class="control-label">تسویه </label>
+                                <input type="text" class="form-control" asp-for="Command.Tasvie">
+                                <span asp-validation-for="Command.Tasvie" class="error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label asp-for="Command.Picture" class="control-label">عکس</label>
+                                <input type="file" class="form-control" asp-for="Command.Picture" accept="image/*">
+                                <span asp-validation-for="Command.Picture" class="error"></span>
                             </div>
                         </div>
                     </div>
@@ -80,7 +245,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group no-margin">
-                                <label asp-for="Command.Description" class="control-label">توضیحات</label>
+                                <label asp-for="Command.Description" class="control-label">نقد و بررسی صرافی</label>
                                 <textarea class="form-control" id="BodyContent" asp-for="Command.Description"></textarea>
                                 <span asp-validation-for="Command.Description" class="error"></span>
                             </div>
