@@ -1,17 +1,16 @@
-using _01_LampshadeQuery.Contracts.Article;
 using _01_LampshadeQuery.Contracts.Product;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EndPoint.Pages
 {
-    public class ExchangeModel : PageModel
+    public class ExchangesModel : PageModel
     {
         private readonly IProductQuery _articleQuery;
         public ProductQueryModel product;
 
 
-        public ExchangeModel(IProductQuery articleQuery)
+        public ExchangesModel(IProductQuery articleQuery)
         {
             _articleQuery = articleQuery;
         }

@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id}"
 @model EndPoint.Pages.CoinModel
 @{
 }
@@ -85,7 +85,7 @@
                 <div class="flex-row justify-center w-10">
                     <img class="w-10 bg-gray-300" src="@item.Image" alt="">
                     
-                        <h3 class=" mt-1"><a asp-page="Exchange" asp-route-id="@item.Name"> @item.Name </a></h3>
+                        <h3 class=" mt-1"><a asp-page="Exchanges" asp-route-id="@item.Name"> @item.Name </a></h3>
                     @if (item.MarketType == 1)
                     {
                         <p class="text-center  text-green-400">بازار</p>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="flex flex-col">
                     <a href="@item.Url"><button class="bg-blue-500 text-white p-1  rounded-md ">خرید فروش </button></a>
-                    <a asp-page="Exchange" asp-route-id="@item.Name"><button class="bg-yellow-300 text-slate-950 mt-2 p-1 rounded-md ">برسی صرافی</button></a>
+                    <a asp-page="Exchanges" asp-route-id="@item.Name"><button class="bg-yellow-300 text-slate-950 mt-2 p-1 rounded-md ">برسی صرافی</button></a>
                 </div>
             </div>
             <!--Desktop-->
@@ -126,7 +126,7 @@
                     <div class="w-12 flex">
                         <img class="w-10 bg-gray-300 rounded-3" style="height:50px;" src="@item.Image" alt="">
                         <div class="flex-row px-2">
-                           <h3 class="" style="text-align:center;width:50px"> <a asp-page="Exchange" asp-route-id="@item.Name">@item.Name</a></h3>
+                           <h3 class="" style="text-align:center;width:50px"> <a asp-page="Exchanges" asp-route-id="@item.Name">@item.Name</a></h3>
                             @if (item.MarketType == 1)
                             {
                                 <p class="text-center  text-green-400">بازار</p>
@@ -170,7 +170,7 @@
                     <h4 style="width:160px;font-size:14px;">@item.TransactionFee</h4>
                 </div>
                 <a href="@item.Url"><button class="bg-blue-500 text-white py-2 px-4 rounded-lg"> خرید / فروش </button></a>
-                <a asp-page="Exchange" asp-route-id="@item.Name"><button class="bg-yellow-300 text-slate-950 py-2 px-4 rounded-lg">برسی صرافی</button></a>
+                <a asp-page="Exchanges" asp-route-id="@item.Name"><button class="bg-yellow-300 text-slate-950 py-2 px-4 rounded-lg">برسی صرافی</button></a>
             </div>
 
         }
