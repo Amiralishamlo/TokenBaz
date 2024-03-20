@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EndPoint.Pages
 {
-    public class exchangeModel : PageModel
+    public class ExchangeModel : PageModel
     {
         private readonly IProductQuery _articleQuery;
         public ProductQueryModel product;
 
 
-        public exchangeModel(IProductQuery articleQuery)
+        public ExchangeModel(IProductQuery articleQuery)
         {
             _articleQuery = articleQuery;
         }
