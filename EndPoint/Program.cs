@@ -1,11 +1,21 @@
 using _0_Framework.Application;
 using BlogManagement.Infrastructure.Configuration;
 using EndPoint;
+using EndPoint.Scheduler;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Application.Contracts.Coin;
+using ShopManagement.Application.Contracts.CoinPrice;
+using ShopManagement.Application;
 using ShopManagement.Configuration;
+using ShopManagement.Domain.Coin;
+using ShopManagement.Domain.CoinPrice;
+using ShopManagement.Domain.Exchange;
 using ShopManagement.Infrastructure.EFCore.IdentityContext;
+using ShopManagement.Infrastructure.EFCore.Repository;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using EndPoint.Coin;
+using EndPoint.CoinPrice;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,12 +37,32 @@ builder.Services.ConfigureApplicationCookie(option =>
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddHttpContextAccessor();
-var connectionString = builder.Configuration.GetConnectionString("Token");
-ShopManagementBootstrapper.Configure(builder.Services, connectionString);
-BlogManagementBootstrapper.Configure(builder.Services, connectionString);
 builder.Services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
 builder.Services.AddSingleton<IPasswordHasher, PasswordHasher>();
 builder.Services.AddTransient<IFileUploader, FileUploader>();
+
+builder.Services.AddSingleton<CoinDeserializer>();
+builder.Services.AddSingleton<CoinPriceDeserializer>();
+builder.Services.AddSingleton<CoinCollector>();
+builder.Services.AddSingleton<CoinPriceCollector>();
+builder.Services.AddTransient<ICoinApplication, CoinApplication>();
+builder.Services.AddTransient<ICoinPriceApplication, CoinPriceApplication>();
+builder.Services.AddTransient<ICoinRepository, CoinRepository>();
+builder.Services.AddTransient<ICoinPriceRepository, CoinPriceRepository>();
+builder.Services.AddTransient<IExchangeRepository, ExchangeRepository>();
+builder.Services.AddCronJob<CoinJob>(c =>
+{
+    c.CronExpression = @"0 0 0/6 1/1 * ? *";
+});
+builder.Services.AddCronJob<CoinPriceJob>(c =>
+{
+    c.CronExpression = @"0 0 0/6 1/1 * ? *";
+});
+
+var connectionString = builder.Configuration.GetConnectionString("Token");
+ShopManagementBootstrapper.Configure(builder.Services, connectionString);
+BlogManagementBootstrapper.Configure(builder.Services, connectionString);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

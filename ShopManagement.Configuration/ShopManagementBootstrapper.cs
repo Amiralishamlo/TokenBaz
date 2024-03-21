@@ -32,6 +32,6 @@ public class ShopManagementBootstrapper
 
 
 
-        services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
+        services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString),contextLifetime : ServiceLifetime.Singleton);
     }
 }

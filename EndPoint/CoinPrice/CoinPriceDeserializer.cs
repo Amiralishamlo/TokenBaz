@@ -3,7 +3,7 @@ using AngleSharp;
 using ShopManagement.Application.Contracts.CoinPrice;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ShopManagement.Collector.CoinPrice
+namespace EndPoint.CoinPrice
 {
     public class CoinPriceDeserializer
     {
