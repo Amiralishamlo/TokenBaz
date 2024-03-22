@@ -11,13 +11,13 @@
         <div class="">
             <div class="hidden lg:grid grid-cols-3 px-4">
                 <img class=" rounded-md mr-12" style="width:60px;height:60px;" src="~/ProductPictures/@Model.product.Picture" alt="@Model.product.PictureAlt">
-                <h1 class="font-bold " style="font-size:20px;">بررسی قیمت و ویژگی صرافی ارز دیجیتال @Model.product.Name</h1>
+                <h1 class="font-bold " style="font-size:20px;">بررسی قیمت و ویژگی صرافی ارز دیجیتال  <span style="color:#00ff2f">@Model.product.Name</span></h1>
                 <div class="mr-16">
                     <a href="@Model.product.Url"><button class="rounded-lg border-4 border-cyan-600 px-6 py-1">ورود / ثبت نام</button></a>
                 </div>
             </div>
             <div class="flex px-4 lg:hidden">
-                <h1 class="font-bold text-xs">بررسی قیمت و ویژگی صرافی ارز دیجیتال @Model.product.Name</h1>
+                <h1 class="font-bold text-xs">بررسی قیمت و ویژگی صرافی ارز دیجیتال <samp style="color:#00ff2f">@Model.product.Name</samp></h1>
             </div>
             <br>
             <div class="flex lg:hidden">
@@ -29,32 +29,32 @@
             <br>
             <div class="container mx-auto xl:max-w-screen-2xl grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8 lg:px-16 ">
                 <div class="flex ">
-                    <h2 class="font-bold "> نوع صرافی   :</h2>
+                    <h2 class="font-bold text-yellow-400"> نوع صرافی   :</h2>
                     <p class="mr-2 ">@Model.product.noSarafi </p>
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> حداکثر زمان احراز هویت :</h2>
+                    <h2 class="font-bold text-yellow-400"> حداکثر زمان احراز هویت :</h2>
                     <p class="mr-2 ">@Model.product.hadAksarZamanHoviat </p>
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> تعداد کارمندان :</h2>
+                    <h2 class="font-bold text-yellow-400"> تعداد کارمندان :</h2>
                     <p class="mr-2 ">@Model.product.TedadKarmand </p>
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> عمر صرافی :</h2>
+                    <h2 class="font-bold text-yellow-400"> عمر صرافی :</h2>
                     <p class="mr-2 ">@Model.product.TolSarafi </p>
                 </div>
 
                 <div class="flex ">
-                    <h2 class="font-bold text-xs"> کارمزد بازار تومانی  :</h2>
+                    <h2 class="font-bold text-xs text-yellow-400"> کارمزد بازار تومانی  :</h2>
                     <p class="mr-2 ">@Model.product.KarmozdBazarToman </p>
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> بازار تتری:</h2>
+                    <h2 class="font-bold text-yellow-400"> بازار تتری:</h2>
                     @if (Model.product.BazarTeteri)
                     {
                         <p class="mr-2 ">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
                         </p>
@@ -69,18 +69,18 @@
                     }
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold ">
+                    <h2 class="font-bold text-yellow-400">
                         حداقل خرید:
                     </h2>
                     <p class="mr-2 ">@Model.product.HadKharid </p>
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> حداقل فروش :</h2>
+                    <h2 class="font-bold text-yellow-400"> حداقل فروش :</h2>
                     <p class="mr-2 ">@Model.product.HadForosh </p>
                 </div>
 
                 <div class="flex ">
-                    <h2 class="font-bold "> کیف پول اختصاصی  :</h2>
+                    <h2 class="font-bold text-yellow-400"> کیف پول اختصاصی  :</h2>
                     @if (Model.product.KifPolEkhtesasi)
                     {
                         <p class="mr-2 ">
@@ -99,7 +99,7 @@
                     }
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> قابلیت تبدیل موجودی های کوچک:</h2>
+                    <h2 class="font-bold text-yellow-400"> قابلیت تبدیل موجودی های کوچک:</h2>
                     @if (Model.product.GhabeliatTabdilMogodiKochak)
                     {
                         <p class="mr-2 ">
@@ -110,7 +110,7 @@
                     }
                     else
                     {
-                        <p class="mr-2 ">
+                        <p class="mr-2 text-yellow-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
@@ -118,7 +118,7 @@
                     }
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> سیستم درآمد زایی:</h2>
+                    <h2 class="font-bold text-yellow-400"> سیستم درآمد زایی:</h2>
                     @if (Model.product.SystemDaramadZayi)
                     {
                         <p class="mr-2 ">
@@ -137,7 +137,7 @@
                     }
                 </div>
                 <div class="flex ">
-                    <h2 class="font-bold "> ورود دو مرحله ای :</h2>
+                    <h2 class="font-bold text-yellow-400"> ورود دو مرحله ای :</h2>
                     @if (Model.product.TwoLogin)
                     {
                         <p class="mr-2 ">
@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="flex ">
-                    <h2 class="font-bold "> اپلیکیشن موبایل  :</h2>
+                    <h2 class="font-bold text-yellow-400"> اپلیکیشن موبایل  :</h2>
                     @if (Model.product.Application)
                     {
                         <p class="mr-2 ">
@@ -175,15 +175,15 @@
                         </p>
                     }
                 </div>
-                <div class="flex ">
+                <div class="flex text-yellow-400">
                     <h2 class="font-bold "> راه های ارتباطی:</h2>
                     <p class="mr-2 ">@Model.product.Information </p>
                 </div>
-                <div class="flex ">
+                <div class="flex text-yellow-400">
                     <h2 class="font-bold "> پایه پولی:</h2>
                     <p class="mr-2 ">@Model.product.PayePoly </p>
                 </div>
-                <div class="flex ">
+                <div class="flex text-yellow-400">
                     <h2 class="font-bold "> پشتیبانی از شبکه ها :</h2>
                     <p class="mr-2 ">@Model.product.PoshtibaniShabake </p>
                 </div>
@@ -191,16 +191,16 @@
         </div>
         <br>
         <div class="hidden lg:flex">
-            <h2 class="font-bold mr-2 ">توضیحات صرافی :</h2>
+            <h2 class="font-bold mr-2 text-yellow-400">توضیحات صرافی :</h2>
             <p class="mr-2 ">@Model.product.ShortDescription</p>
         </div>
         <div class="w-3/4 mr-2 lg:hidden">
-            <h2 class="font-bold  text-xs">توضیحات صرافی :</h2>
+            <h2 class="font-bold  text-xs text-yellow-400">توضیحات صرافی :</h2>
             <p class=" text-xs">@Model.product.ShortDescription</p>
         </div>
         <br>
         <div class="flex">
-            <h2 class="font-bold mr-2 text-xs">تسویه : </h2>
+            <h2 class="font-bold mr-2 text-xs text-yellow-400">تسویه : </h2>
             <p class="mr-2 text-xs">@Model.product.Tasvie</p>
         </div>
         <br>
@@ -261,13 +261,13 @@
         </div>
         <br />
         <div class="hidden lg:block">
-            <h1 class="font-bold mb-4">نقد و بررسی صرافی :</h1>
+            <h1 class="font-bold mb-4 text-yellow-400">نقد و بررسی صرافی :</h1>
             <p>
                 @Html.Raw(Model.product.Description)
             </p>
         </div>
         <div class="w-3/4 mr-2 lg:hidden">
-            <h1 class="font-bold mb-4">نقد و بررسی صرافی :</h1>
+            <h1 class="font-bold mb-4 text-yellow-400">نقد و بررسی صرافی :</h1>
             <p class="text-xs">
                 @Html.Raw(Model.product.Description)
             </p>
