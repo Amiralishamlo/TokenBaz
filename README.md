@@ -8,16 +8,16 @@ Project Title : Cryptocurrency analysis .
 
 # View
 
-![TokenBaz](Web-View/item (3).png)
+![TokenBaz](Web-View/item-3.png)
 
 #
 
-![TokenBaz](Web-View/item (4).png)
+![TokenBaz](Web-View/item-4.png)
 
 #
 
-![TokenBaz](Web-View/item (5).png)
+![TokenBaz](Web-View/item-5.png)
 
 #
 
-![TokenBaz](Web-View/item (1).png)
+![TokenBaz](Web-View/item-1.png)
